@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import com.byyw.nettyHttpServer.controller.FileController;
 import com.byyw.nettyHttpServer.controller.TestController;
 import com.byyw.nettyHttpServer.entity.HttpParams;
 import com.byyw.nettyHttpServer.enums.ResultCode;
@@ -40,6 +41,8 @@ public class HttpRequestHandler extends SimpleChannelInboundHandler<Object> {
 
     @Autowired
     private TestController testController;
+    @Autowired
+    private FileController fileController;
 
     /** 
      * @param ctx
@@ -106,8 +109,10 @@ public class HttpRequestHandler extends SimpleChannelInboundHandler<Object> {
         new Thread(()->{
             try {
                 String uri = fullHttpRequest.uri();
-                if (uri.startsWith("/test")) {
+                if(uri.startsWith("/test")) {
                     testController.work(hp);
+                } else if(uri.startsWith("/file")){
+                    fileController.work(hp);
                 } else {
                     JSONObject j = new JSONObject();
                     j.set("code", ResultCode.NO_INTERFACE).set("msg", "url不存在");

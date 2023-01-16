@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import com.byyw.nettyHttpServer.config.SslContextFactory;
-import com.byyw.nettyHttpServer.entity.MiModule;
 import com.byyw.nettyHttpServer.handler.HttpRequestHandler;
 
 import cn.hutool.core.util.StrUtil;

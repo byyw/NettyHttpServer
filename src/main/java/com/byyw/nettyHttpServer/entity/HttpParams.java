@@ -27,7 +27,6 @@ import io.netty.handler.codec.http.multipart.MemoryAttribute;
 import io.netty.handler.codec.http.multipart.InterfaceHttpData.HttpDataType;
 import io.netty.util.ReferenceCountUtil;
 import lombok.Data;
-import lombok.extern.slf4j.Slf4j;
 
 @Data
 public class HttpParams {

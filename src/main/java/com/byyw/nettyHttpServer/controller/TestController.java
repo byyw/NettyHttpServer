@@ -10,7 +10,6 @@ import com.byyw.nettyHttpServer.exception.ParamErrorException;
 import com.byyw.nettyHttpServer.util.NettyHttpResponseUtils;
 
 import cn.hutool.json.JSONObject;
-import lombok.extern.slf4j.Slf4j;
 
 @Component
 public class TestController extends MController<Object> {
